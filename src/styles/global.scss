@@ -1,0 +1,20 @@
+:root {
+    --color-white: #fff;
+    --color-text: #b3b3b3;
+    --bg-player: #181818;
+    --bg-sidebar: #000;
+    --bg-ep-list: #121212;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+body,
+html,
+#root {
+    height: 100vh;
+}

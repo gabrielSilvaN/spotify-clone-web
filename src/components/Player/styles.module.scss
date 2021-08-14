@@ -1,0 +1,49 @@
+.player {
+    grid-area: PL;
+    background-color: var(--bg-player);
+    color: var(--color-white);
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+
+        img {
+            height: 56px;
+            width: 56px;
+        }
+
+        .description {
+            margin-left: 8px;
+            display: flex;
+            flex-direction: column;
+
+            p {
+                text-overflow: ellipsis;
+
+                overflow: hidden;
+                max-width: 300px;
+                white-space: nowrap;
+            }
+        }
+
+        svg {
+            margin: 10px;
+            flex-shrink: 0;
+        }
+    }
+
+    .center {
+        flex: 1;
+    }
+
+    .right {
+        flex: 1;
+    }
+}
