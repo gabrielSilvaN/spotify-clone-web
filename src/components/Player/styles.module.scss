@@ -8,11 +8,27 @@
     align-items: center;
     justify-content: space-between;
 
+    position: relative;
+    z-index: 2;
+
+    border-top: 1px solid #282828;
+
+    svg {
+        color: var(--color-text);
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(1.2);
+        }
+    }
+
     .left {
         flex: 1;
         display: flex;
         align-items: center;
         justify-content: start;
+        gap: 10px;
 
         img {
             height: 56px;
@@ -24,26 +40,151 @@
             display: flex;
             flex-direction: column;
 
-            p {
+            a {
                 text-overflow: ellipsis;
+                transition: all 0.3s;
+                font-size: 14px;
 
                 overflow: hidden;
                 max-width: 300px;
                 white-space: nowrap;
+
+                color: var(--color-white);
+
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                &:last-child {
+                    font-size: 11px;
+                    color: var(--color-text);
+                }
             }
         }
 
         svg {
-            margin: 10px;
             flex-shrink: 0;
         }
     }
 
     .center {
         flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+
+        .controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 8px;
+            gap: 20px;
+
+            svg:first-child,
+            svg:last-child {
+                transform: scale(1.75);
+            }
+
+            .playButton {
+                color: var(--color-white);
+                transform: scale(1.75);
+
+                &:hover {
+                    transform: scale(1.85);
+                }
+            }
+        }
+
+        .sliderContainer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 10px;
+
+            span {
+                color: var(--color-text);
+                font-size: 11px;
+            }
+
+            input {
+                flex: 1;
+
+                appearance: none;
+                height: 4px;
+                border-radius: 10px;
+                background-color: var(--color-text);
+                opacity: 0.7;
+                transition: opacity 0.2s;
+
+                &:hover {
+                    opacity: 1;
+
+                    &::-webkit-slider-thumb {
+                        display: block;
+                    }
+                }
+
+                &::-webkit-slider-thumb {
+                    display: none;
+                    appearance: none;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: var(--color-white);
+                    cursor: pointer;
+                    transition: all 0.2s;
+                }
+            }
+        }
     }
 
     .right {
         flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        gap: 15px;
+
+        .containerVolume {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            input {
+                appearance: none;
+                height: 4px;
+                border-radius: 10px;
+                background-color: var(--color-text);
+                opacity: 0.7;
+                transition: opacity 0.2s;
+
+                &:hover {
+                    opacity: 1;
+                    background-color: #1db954;
+
+                    &::-webkit-slider-thumb {
+                        display: block;
+                    }
+                }
+
+                &::-webkit-slider-thumb {
+                    display: none;
+                    appearance: none;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: var(--color-white);
+                    cursor: pointer;
+                    transition: all 0.2s;
+                }
+            }
+        }
     }
 }

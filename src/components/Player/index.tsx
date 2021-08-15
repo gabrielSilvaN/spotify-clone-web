@@ -1,6 +1,11 @@
 import styles from "./styles.module.scss";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { FaPlayCircle } from "react-icons/fa";
 import { CgInpicture } from "react-icons/cg";
+import { BiSkipPrevious, BiSkipNext } from "react-icons/bi";
+import { MdQueueMusic, MdDevicesOther } from "react-icons/md";
+import { RiVolumeUpLine } from "react-icons/ri";
+
 export default function Player() {
   return (
     <div className={styles.player}>
@@ -11,11 +16,10 @@ export default function Player() {
         />
 
         <div className={styles.description}>
-          <p>
+          <a href="#">
             Fala Dev #21 - Estratégias de autenticação, JWT, OAuth, qual usar?
-            aksdjfkasjdfk
-          </p>
-          <span>Podcast FalaDev</span>
+          </a>
+          <a href="#">Podcast FalaDev</a>
         </div>
 
         <AiOutlinePlusCircle size={16} />
@@ -24,22 +28,34 @@ export default function Player() {
       </div>
 
       <div className={styles.center}>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-          praesentium tempore architecto doloremque blanditiis provident tempora
-          eius sed magni voluptate, asperiores hic modi et, impedit, velit
-          corporis maiores autem in.
-        </p>
+        <div className={styles.controls}>
+          <BiSkipPrevious size={16} />
+          <FaPlayCircle size={20} className={styles.playButton} />
+          <BiSkipNext size={16} />
+        </div>
+
+        <div className={styles.sliderContainer}>
+          <span>0:00</span>
+          <input type="range" name="" id="" />
+          <span>24:23</span>
+        </div>
       </div>
 
       <div className={styles.right}>
-        {" "}
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-          praesentium tempore architecto doloremque blanditiis provident tempora
-          eius sed magni voluptate, asperiores hic modi et, impedit, velit
-          corporis maiores autem in.
-        </p>
+        <MdQueueMusic size={16} />
+
+        <MdDevicesOther size={16} />
+
+        <div className={styles.containerVolume}>
+          <RiVolumeUpLine size={16} />
+          <input
+            type="range"
+            min="0"
+            step="0.05"
+            defaultValue="100"
+            max="100"
+          />
+        </div>
       </div>
     </div>
   );
